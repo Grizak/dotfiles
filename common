@@ -1,0 +1,60 @@
+# Cursor
+printf '\e[6 q'
+
+# Common shell configuration for both bash and zsh
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# History settings
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Color support for ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto -1'
+fi
+
+# NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+case ":$PATH:" in
+  *"$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+export NODE_PATH=$(pnpm root -g 0>/dev/null || echo "")
+
+# GO
+export GOBIN=$(go env GOPATH)/bin
+
+# PATH additions - only add if not already present
+[[ ":$PATH:" != *":/usr/lib/ccache:"* ]] && export PATH="/usr/lib/ccache:$PATH"
+[[ ":$PATH:" != *":/usr/sbin:"* ]] && export PATH="$PATH:/usr/sbin"
+[[ ":$PATH:" != *":/home/grizak/utils:"* ]] && export PATH="$PATH:/home/grizak/utils"
+[[ ":$PATH:" != *":$GOBIN:"* ]] && export PATH="$PATH:$GOBIN"
+
+# Cargo (Rust) - only load if not already in PATH
+if [ -f "$HOME/.cargo/env" ] && [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
+    . "$HOME/.cargo/env"
+fi
+
+# Load custom aliases
+if [ -f ~/.shell/aliases ]; then
+    source ~/.shell/aliases
+fi
+
+# Default editor
+export EDITOR=vim
+
