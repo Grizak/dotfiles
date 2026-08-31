@@ -56,3 +56,5 @@ alias lal='ls -la'
 alias code='code --disable-gpu -r'
 
 alias bat='batcat'
+
+alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'

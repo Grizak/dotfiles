@@ -55,6 +55,11 @@ if [ -f ~/.shell/aliases ]; then
     source ~/.shell/aliases
 fi
 
+# NVM
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+	source /usr/share/nvm/init-nvm.sh
+fi
+
 # Default editor
 export EDITOR=vim
 
