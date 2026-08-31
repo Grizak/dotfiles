@@ -1,0 +1,26 @@
+[init]
+	defaultBranch = master
+[user]
+	email = gronlundisak11@gmail.com
+	name = Isak Grönlund
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+  helper = !/usr/bin/gh auth git-credential
+
+[alias]
+  co = checkout
+  br = branch
+  c = commit
+  t = tag
+  st = status
+  m = merge
+  p = push
+  pu = pull
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  visual = log --graph --oneline --all
+  pt = push --tags
+
