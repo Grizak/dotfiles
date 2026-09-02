@@ -44,6 +44,7 @@ export GOBIN=$(go env GOPATH)/bin
 [[ ":$PATH:" != *":/usr/sbin:"* ]] && export PATH="$PATH:/usr/sbin"
 [[ ":$PATH:" != *":/home/grizak/utils:"* ]] && export PATH="$PATH:/home/grizak/utils"
 [[ ":$PATH:" != *":$GOBIN:"* ]] && export PATH="$PATH:$GOBIN"
+[[ ":$PATH:" != *":/home/grizak/.deno/bin:"* ]] && export PATH="/home/grizak/.deno/bin:$PATH"
 
 # Cargo (Rust) - only load if not already in PATH
 if [ -f "$HOME/.cargo/env" ] && [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
