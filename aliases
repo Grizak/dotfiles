@@ -35,21 +35,6 @@ alias c='clear'
 
 alias sus='systemctl suspend -i'
 
-freev() {
-  free -h | awk '
-    NR==1 {
-      for(i=2; i<=NF; i++) headers[i]=$i
-      next
-    }
-    {
-      for(i=2; i<=NF; i++) {
-        printf "%-12s %-12s %s\n", $1, $headers[i], $i
-      }
-      print ""
-    }
-  '
-}
-
 alias ls='ls -Ah --color'
 alias ll='ls -l'
 alias la='ls -a'
@@ -61,5 +46,11 @@ alias bat='batcat'
 
 alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'
 
-alias ctime="timedatectl | grep 'Local time' | awk '{print $3, $4, $5}'"
-alias cutime="watch -n 0.5 ctime"
+ctime() {
+  timedatectl "$@" | grep 'Local time' | awk '{print $3, $4, $5}'
+}
+
+cutime() {
+  watch -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5}"'
+}
+
