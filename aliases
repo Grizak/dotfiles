@@ -15,7 +15,9 @@ alias eals='$EDITOR ~/.shell/aliases'
 # Spotify cache reset
 alias rsp='rm -rf ~/.var/app/com.Spotify.Client/cache'
 
-alias cr="printf '\e[6 q'"
+cr() {
+  printf '\e[6 q'
+}
 
 alias timer='pv -t'
 
@@ -58,3 +60,6 @@ alias code='code --disable-gpu -r'
 alias bat='batcat'
 
 alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'
+
+alias ctime="timedatectl | grep 'Local time' | awk '{print $3, $4, $5}'"
+alias cutime="watch -n 0.5 ctime"
