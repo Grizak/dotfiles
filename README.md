@@ -2,9 +2,12 @@
 
 This is a repo with my dotfiles
 
-If you want to use them, clone the repo into "~/.shell" and run the setup script:
-
+If you want to use them:
 ```bash
+# Clone the repo
+git clone https://github.com/Grizak/dotfiles.git ~/.shell # <- Really important!
+
+# And then run the setup script:
 # Make sure that the file is executable
 chmod +x ~/.shell/setup
 
