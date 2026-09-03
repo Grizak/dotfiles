@@ -46,7 +46,7 @@ alias code='code --disable-gpu -r'
 alias bat='batcat'
 
 alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'
-
+alias ssy='shell-sync'
 ctime() {
   timedatectl "$@" | grep 'Local time' | awk '{print $3, $4, $5}'
 }
