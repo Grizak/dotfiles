@@ -98,7 +98,7 @@ The configuration includes commands for managing and updating this repository:
 - `shell-sync`
 - `ssy`
 
-These commands are intended for my own workflow and may attempt to push changes to the repository. They require write access and are not necessary for normal use.
+These commands are intended for my own workflow and will attempt to push changes to the repository. They require write access and are not necessary for normal use.
 
 Use them only if you understand what they do and have configured them for your own repository.
 
