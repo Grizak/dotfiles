@@ -17,13 +17,13 @@ The setup script expects the repository to be located at `~/.shell`.
 Make the setup script executable:
 
 ```bash
-chmod +x ~/.shell/setup
+chmod +x ~/.shell/setup.sh
 ```
 
 Run the setup script:
 
 ```bash
-~/.shell/setup
+~/.shell/setup.sh
 ```
 
 The script creates hard links for the following files:
@@ -43,7 +43,7 @@ Arguments passed to the setup script are passed directly to `ln`.
 For example:
 
 ```bash
-~/.shell/setup -f
+~/.shell/setup.sh -f
 ```
 
 runs `ln -f` for each file. This allows existing destination files to be removed and replaced with hard links.
