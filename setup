@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+declare -A files
+files["~/.zshrc"]="~/.shell/zsh"
+files["~/.bashrc"]="~/.shell/bash"
+files["~/.vimrc"]="~/.shell/vim"
+files["~/.p10k.zsh"]="~/.shell/.p10k"
+files["~/.gitconfig"]="~/.shell/gitconf"
+
+# Loop over specific keys and create hard links
+for key in "${!files[@]}"; do
+    original="${files[$key]}"
+    original="${original/#\~/$HOME}"
+    link_name="$key"
+    link_name="${link_name/#\~/$HOME}"
+
+    # Create hard link: ln <original> <link_name>
+    ln $@ "$original" "$link_name"
+    
+    if [ $? -eq 0 ]; then
+        echo "Created hard link: $key -> $original"
+    else
+        echo "Failed to create hard link for $key"
+    fi
+done
