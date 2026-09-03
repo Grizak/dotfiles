@@ -1,16 +1,17 @@
 # Edit .zshrc file
 alias ezrc='$EDITOR ~/.zshrc'
-alias szrc='source ~/.zshrc'
 
 # Edit .bashrc file
 alias ebrc='$EDITOR ~/.bashrc'
-alias sbrc='source ~/.bashrc'
 
 # Edit .common file
 alias ecmn='$EDITOR ~/.shell/common'
 
 # Edit .aliases file
 alias eals='$EDITOR ~/.shell/aliases'
+
+# Source
+alias r="exec $SHELL"
 
 # Spotify cache reset
 alias rsp='rm -rf ~/.var/app/com.Spotify.Client/cache'
@@ -20,7 +21,7 @@ cr() {
 }
 
 alias timer='pv -t'
-
+alias t='pv -t'
 # Git
 alias g='git'
 
@@ -53,4 +54,6 @@ ctime() {
 cutime() {
   watch -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5}"'
 }
+
+alias sl="sudo \!\!"
 
