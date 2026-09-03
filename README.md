@@ -8,14 +8,14 @@ If you want to use them:
 git clone https://github.com/Grizak/dotfiles.git ~/.shell # <- Really important!
 
 # And then run the setup script:
-# Make sure that the file is executable
+# Make sure that it's executable
 chmod +x ~/.shell/setup
 
 # Run it
 ~/.shell/setup # Use -f if it fails because the file exists and YOU ARE SURE YOU WANT TO OVERRIDE it
 ```
 
-It will update automatically with new content when I update it locally.
+It will update automatically with new content when I update it locally. (That is only true on zsh, if you're using bash, you'll have to figure that out yourself.)
 It provides config for both bash and zsh, although zsh is what I use daily.
 Because of that, bash looks really pale and zsh requires a nerd font.
 
