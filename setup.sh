@@ -15,7 +15,7 @@ for key in "${!files[@]}"; do
     link_name="${link_name/#\~/$HOME}"
 
     # Create hard link: ln <original> <link_name>
-    ln $@ "$original" "$link_name"
+    ln "$@" "$original" "$link_name"
     
     if [ $? -eq 0 ]; then
         echo "Created hard link: $key -> $original"
