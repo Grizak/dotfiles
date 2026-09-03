@@ -50,10 +50,12 @@ alias ssy='shell-sync'
 ctime() {
   timedatectl "$@" | grep 'Local time' | awk '{print $3, $4, $5}'
 }
+alias ct='ctime'
 
 cutime() {
-  watch -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5}"'
+  watch -t -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5}"'
 }
+alias cuti='cutime'
 
 alias sl="sudo \!\!"
 

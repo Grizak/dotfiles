@@ -69,6 +69,7 @@ add-zsh-hook precmd _shell_auto_reload
 
 # === RESET CURSOR ===
 add-zsh-hook precmd cr
+
 # === SHARED CONFIG ===
 if [ -f ~/.shell/common ]; then
   source ~/.shell/common
