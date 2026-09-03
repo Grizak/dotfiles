@@ -63,7 +63,7 @@ For example, changes made to either of these paths affect the same file:
 ~/.zshrc
 ```
 
-Changes do not need to be copied between the repository and the installed locations. They can be committed directly from `~/.shell`.
+Changes do not need to be copied between the repository and the installed locations. They can be committed directly from `~/.shell`, and fast-forward updates to the repository are immediately reflected in the linked files.
 
 The repository and your home directory must be on the same filesystem because hard links cannot cross filesystem boundaries. The setup script links individual files; it does not link directories.
 
@@ -73,15 +73,33 @@ Because `.gitconfig` may contain personal settings, review the repository conten
 
 ## Updates
 
-Changes made locally to files in `~/.shell` are immediately reflected in their installed locations because of the hard links.
+Because the installed files are hard-linked to the repository, changes made to files in `~/.shell` are immediately reflected in their installed locations.
 
-The Zsh configuration includes automatic update functionality for this repository. Bash does not currently include that functionality, so Bash users must update the repository manually:
+When using Zsh, the configuration checks for repository updates in the background. At most once every five minutes, it:
+
+1. Fetches updates from the configured Git remote.
+2. Checks whether the remote tracking branch is ahead.
+3. Fast-forwards the local branch when possible.
+4. Reloads `~/.zshrc` after a successful update.
+
+This check runs before displaying each Zsh prompt, so an update may be applied while an interactive shell is open.
+
+Automatic updates only work when:
+
+- `~/.shell` is a Git repository.
+- The current branch has a configured upstream branch.
+- The local repository can be fast-forwarded cleanly.
+- The repository is clean enough for Git to perform the update.
+
+If the local branch has diverged, or if local changes prevent a fast-forward update, the automatic update is skipped. The fetch and update commands intentionally suppress their error output.
+
+Bash does not currently include this automatic update functionality. Bash users must update the repository manually:
 
 ```bash
 git -C ~/.shell pull
 ```
 
-After updating, start a new shell or reload the relevant configuration files.
+After updating, start a new shell or reload the relevant configuration files using `r`.
 
 ## Requirements
 
