@@ -60,5 +60,4 @@ cutime() {
 }
 alias cuti='cutime'
 
-alias sl="sudo \!\!"
-
+alias sst='git -C ~/.shell status'
