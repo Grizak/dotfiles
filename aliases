@@ -11,7 +11,7 @@ alias ecmn='$EDITOR ~/.shell/common'
 alias eals='$EDITOR ~/.shell/aliases'
 
 # Edit setup
-alias eset='$EDITOR ~/.shell/setup'
+alias eset='$EDITOR ~/.shell/setup.sh'
 
 # Source
 alias r="exec $SHELL"
@@ -61,3 +61,5 @@ cutime() {
 alias cuti='cutime'
 
 alias sst='git -C ~/.shell status'
+
+alias ff='fastfetch'
