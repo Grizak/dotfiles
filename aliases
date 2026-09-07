@@ -63,3 +63,9 @@ alias cuti='cutime'
 alias sst='git -C ~/.shell status'
 
 alias ff='fastfetch'
+
+alias hl='rg --passthru'
+
+alias e='editor'
+
+alias ua='update-alternatives'
