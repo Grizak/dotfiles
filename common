@@ -19,6 +19,23 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto -1'
 fi
 
+
+# GO
+export GOBIN=$(go env GOPATH)/bin
+
+# PATH additions - only add if not already present
+[[ ":$PATH:" != *":/usr/lib/ccache:"* ]] && export PATH="/usr/lib/ccache:$PATH"
+[[ ":$PATH:" != *":/usr/sbin:"* ]] && export PATH="$PATH:/usr/sbin"
+[[ ":$PATH:" != *":/home/grizak/utils:"* ]] && export PATH="$PATH:/home/grizak/utils"
+[[ ":$PATH:" != *":$GOBIN:"* ]] && export PATH="$PATH:$GOBIN"
+[[ ":$PATH:" != *":/home/grizak/.deno/bin:"* ]] && export PATH="/home/grizak/.deno/bin:$PATH"
+[[ ":$PATH:" != *":/home/grizak/.local/share/mise/shims:"* ]] && export PATH="$PATH:/home/grizak/.local/share/mise/shims"
+
+# Cargo (Rust) - only load if not already in PATH
+if [ -f "$HOME/.cargo/env" ] && [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
+    . "$HOME/.cargo/env"
+fi
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
@@ -30,21 +47,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 export NODE_PATH=$(pnpm root -g 0>/dev/null || echo "")
-
-# GO
-export GOBIN=$(go env GOPATH)/bin
-
-# PATH additions - only add if not already present
-[[ ":$PATH:" != *":/usr/lib/ccache:"* ]] && export PATH="/usr/lib/ccache:$PATH"
-[[ ":$PATH:" != *":/usr/sbin:"* ]] && export PATH="$PATH:/usr/sbin"
-[[ ":$PATH:" != *":/home/grizak/utils:"* ]] && export PATH="$PATH:/home/grizak/utils"
-[[ ":$PATH:" != *":$GOBIN:"* ]] && export PATH="$PATH:$GOBIN"
-[[ ":$PATH:" != *":/home/grizak/.deno/bin:"* ]] && export PATH="/home/grizak/.deno/bin:$PATH"
-
-# Cargo (Rust) - only load if not already in PATH
-if [ -f "$HOME/.cargo/env" ] && [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
-    . "$HOME/.cargo/env"
-fi
 
 # Load custom aliases
 if [ -f ~/.shell/aliases ]; then
