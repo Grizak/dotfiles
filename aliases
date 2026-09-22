@@ -69,3 +69,5 @@ alias hl='rg --passthru'
 alias e='editor'
 
 alias ua='update-alternatives'
+
+alias sudo='sudo '
