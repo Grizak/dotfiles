@@ -19,10 +19,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto -1'
 fi
 
-
-# GO
-export GOBIN=$(go env GOPATH)/bin
-
 # PATH additions - only add if not already present
 [[ ":$PATH:" != *":/usr/lib/ccache:"* ]] && export PATH="/usr/lib/ccache:$PATH"
 [[ ":$PATH:" != *":/usr/sbin:"* ]] && export PATH="$PATH:/usr/sbin"
@@ -47,6 +43,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 export NODE_PATH=$(pnpm root -g 0>/dev/null || echo "")
+
+# GO
+export GOBIN=$(go env GOPATH)/bin
 
 # Load custom aliases
 if [ -f ~/.shell/aliases ]; then
