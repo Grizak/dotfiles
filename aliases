@@ -70,4 +70,4 @@ alias e='editor'
 
 alias ua='update-alternatives'
 
-alias sudo='sudo '
+alias sudo='sudo-rs '
