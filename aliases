@@ -16,37 +16,25 @@ alias eset='$EDITOR ~/.shell/setup.sh'
 # Source
 alias r="exec $SHELL"
 
-# Spotify cache reset
-alias rsp='rm -rf ~/.var/app/com.Spotify.Client/cache'
-
 cr() {
   printf '\e[6 q'
 }
 
 alias timer='pv -t'
 alias t='pv -t'
+
 # Git
 alias g='git'
 
-# Function for lcat
-lcat() {
-	cat "$1" || ls "$1"
-}
-
-alias ..='cd ..'
+alias ..="cd .."
 
 alias c='clear'
-
-alias sus='systemctl suspend -i'
 
 alias ls='ls -Ah --color'
 alias ll='ls -l'
 alias la='ls -a'
 alias l='ls -CF'
 alias lal='ls -la'
-alias code='code --disable-gpu -r'
-
-alias bat='batcat'
 
 alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'
 alias ssy='shell-sync'
