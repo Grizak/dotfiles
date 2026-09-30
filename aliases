@@ -59,3 +59,5 @@ alias e='editor'
 alias ua='update-alternatives'
 
 alias sudo='sudo-rs '
+
+alias cat='bat'
