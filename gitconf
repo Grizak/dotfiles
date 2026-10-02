@@ -23,6 +23,7 @@
   last = log -1 HEAD
   visual = log --graph --oneline --all
   pt = push --tags
+  d = diff
 
 [core]
   pager = delta
