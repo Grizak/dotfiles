@@ -44,7 +44,7 @@ _shell_auto_reload() {
       if git -C ~/.shell merge --ff-only --quiet 2>/dev/null; then
         _SHELL_HEAD="$remote_head"
         echo "Remote repo updated, Resourcing"
-        exec $SHELL 
+        exec "$SHELL" 
         return
       fi
     fi
