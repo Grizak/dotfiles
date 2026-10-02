@@ -62,3 +62,5 @@ alias sudo='sudo-rs '
 
 alias cat='bat'
 alias ocat='/bin/cat'
+
+alias less='moor'
