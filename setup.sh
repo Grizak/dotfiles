@@ -7,7 +7,7 @@ files["~/.vimrc"]="~/.shell/vim"
 files["~/.p10k.zsh"]="~/.shell/.p10k"
 files["~/.gitconfig"]="~/.shell/gitconf"
 
-# Loop over specific keys and create hard links
+# Loop over specific keys and create links
 for key in "${!files[@]}"; do
     original="${files[$key]}"
     original="${original/#\~/$HOME}"
