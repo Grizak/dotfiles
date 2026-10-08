@@ -38,6 +38,9 @@ alias lal='ls -la'
 
 alias shell-sync='git -C ~/.shell add -A && git -C ~/.shell commit -m "sync $(date +%Y-%m-%d\ %H:%M)" && git -C ~/.shell push'
 alias ssy='shell-sync'
+alias sst='git -C ~/.shell status'
+alias ssd='git -C ~/.shell diff'
+
 ctime() {
   timedatectl "$@" | grep 'Local time' | awk '{print $3, $4, $5, $6}'
 }
@@ -48,7 +51,6 @@ cutime() {
 }
 alias cti='cutime'
 
-alias sst='git -C ~/.shell status'
 
 alias ff='fastfetch'
 

@@ -117,6 +117,24 @@ if [ -f ~/.shell/common ]; then
   source ~/.shell/common
 fi
 
+# === Command not found ===
+if [[ -x /usr/lib/command-not-found ]] ||
+   [[ -x /usr/share/command-not-found/command-not-found ]]; then
+
+    command_not_found_handler() {
+        if [[ -x /usr/lib/command-not-found ]]; then
+            /usr/lib/command-not-found -- "$1"
+            return $?
+        elif [[ -x /usr/share/command-not-found/command-not-found ]]; then
+            /usr/share/command-not-found/command-not-found -- "$1"
+            return $?
+        else
+            print -u2 -- "$1: command not found"
+            return 127
+        fi
+    }
+fi
+
 if [[ "$TERM" != "linux" ]]; then
   # === ZSH-ONLY STUFF ===
   source ~/.p10k.zsh   # p10k config. Must be AFTER oh-my-zsh.sh
