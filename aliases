@@ -64,3 +64,8 @@ alias cat='bat'
 alias ocat='/bin/cat'
 
 alias less='moor'
+
+alias ubuf='unbuffer'
+alias unbuf='ubuf'
+alias ub='unbuf'
+
