@@ -52,6 +52,11 @@ if [ -f ~/.shell/aliases ]; then
     source ~/.shell/aliases
 fi
 
+# Platform-specific
+if [ -f ~/.custom.shell ]; then
+  source ~/.custom.shell
+fi
+
 # Default editor
 export EDITOR=vim
 
