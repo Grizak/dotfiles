@@ -13,6 +13,9 @@ alias eals='$EDITOR ~/.shell/aliases'
 # Edit setup
 alias eset='$EDITOR ~/.shell/setup.sh'
 
+# Edit custom file
+alias ecst='$EDITOR ~/.custom.shell'
+
 # Source
 alias r="exec $SHELL"
 
