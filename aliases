@@ -75,3 +75,4 @@ alias unbuf='ubuf'
 alias ub='unbuf'
 
 alias tm='tmux'
+alias tma='tm a'
