@@ -24,6 +24,7 @@
   visual = log --graph --oneline --all
   pt = push --tags
   d = diff
+  a = add
 
 [core]
   pager = delta

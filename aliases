@@ -74,3 +74,4 @@ alias ubuf='unbuffer'
 alias unbuf='ubuf'
 alias ub='unbuf'
 
+alias tm='tmux'
