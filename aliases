@@ -76,3 +76,5 @@ alias ub='unbuf'
 
 alias tm='tmux'
 alias tma='tm a'
+
+alias cl='clipboard'
