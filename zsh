@@ -15,6 +15,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # === END OMZSH CORE ===
 
+if [ -f ~/.completion.zsh ]; then
+	source ~/.completion.zsh
+fi
+
 # === AUTOMATIC FETCH ===
 autoload -Uz add-zsh-hook
 zmodload zsh/system

@@ -6,6 +6,7 @@ files["~/.bashrc"]="~/.shell/bash"
 files["~/.vimrc"]="~/.shell/vim"
 files["~/.p10k.zsh"]="~/.shell/.p10k"
 files["~/.gitconfig"]="~/.shell/gitconf"
+files["~/.completion.zsh"]="~/.shell/comp.zsh"
 
 # Loop over specific keys and create links
 for key in "${!files[@]}"; do
@@ -16,7 +17,7 @@ for key in "${!files[@]}"; do
 
     # Create hard link: ln <original> <link_name>
     ln "$@" "$original" "$link_name"
-    
+
     if [ $? -eq 0 ]; then
         echo "Created hard link: $key -> $original"
     else
