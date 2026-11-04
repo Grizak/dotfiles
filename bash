@@ -2,6 +2,10 @@ if [ -f ~/.shell/common ]; then
     source ~/.shell/common
 fi
 
+if [ -f ~/.completion.bash ]; then
+	source ~/.completion.bash
+fi
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 

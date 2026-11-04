@@ -7,6 +7,7 @@ files["~/.vimrc"]="~/.shell/vim"
 files["~/.p10k.zsh"]="~/.shell/.p10k"
 files["~/.gitconfig"]="~/.shell/gitconf"
 files["~/.completion.zsh"]="~/.shell/comp.zsh"
+files["~/.completion.bash"]="~/.shell/comp.bash"
 
 # Loop over specific keys and create links
 for key in "${!files[@]}"; do
