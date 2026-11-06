@@ -45,15 +45,14 @@ alias sst='git -C ~/.shell status'
 alias ssd='git -C ~/.shell diff'
 
 ctime() {
-  timedatectl "$@" | grep 'Local time' | awk '{print $3, $4, $5, $6}'
+	timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5, \$6}" | figlet
 }
 alias ct='ctime'
 
 cutime() {
-  watch -t -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5, \$6}"'
+  watch -t -n 0.5 'timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5, \$6}" | figlet'
 }
 alias cti='cutime'
-
 
 alias ff='fastfetch'
 
