@@ -78,3 +78,11 @@ alias tm='tmux'
 alias tma='tm a'
 
 alias cl='clipboard'
+
+psgrep() {
+	grep $@ | grep -v grep | grep -v rg | hl $1
+}
+
+# Git
+alias gu='git pull' # update = pull
+alias gpt='git push --tags'
