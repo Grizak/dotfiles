@@ -25,3 +25,6 @@ for key in "${!files[@]}"; do
         echo "Failed to create hard link for $key"
     fi
 done
+
+echo "Adding nvim config"
+ln -fs ~/.shell/nvim ~/.config/nvim
