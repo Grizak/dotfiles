@@ -58,5 +58,5 @@ if [ -f ~/.custom.shell ]; then
 fi
 
 # Default editor
-export EDITOR=vim
+export EDITOR=editor
 

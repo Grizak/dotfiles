@@ -45,7 +45,7 @@ alias sst='git -C ~/.shell status'
 alias ssd='git -C ~/.shell diff'
 
 ctime() {
-	timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5, \$6}" | figlet -f slant
+	timedatectl "$@" | grep "Local time" | awk "{print \$3, \$4, \$5, \$6}" | tr "-" " " | figlet -f slant
 }
 alias ct='ctime'
 
