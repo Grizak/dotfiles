@@ -37,3 +37,5 @@
 
 [merge]
     conflictStyle = zdiff3
+[credential "https://git.isaksweb.xyz"]
+	helper = store
