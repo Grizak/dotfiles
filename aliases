@@ -86,4 +86,5 @@ psgrep() {
 alias gu='git pull' # update = pull
 alias gpt='git push --tags'
 alias gt='git tag'
-alias ch='git status --short | wc -l'
+alias ch='git status --short'
+alias chw='ch | wc -l'
